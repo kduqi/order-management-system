@@ -17,7 +17,7 @@ class CustomerRequest extends FormRequest
         return [
             'first_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
-            'email' => 'required|email|unique:customers,email,' . $this->customer->id,
+            'email' => 'required|email|unique:customers,email,' . ($this->customer->id ?? ''),
             'phone' => 'nullable|string|max:20',
             'address' => 'nullable|string',
         ];
