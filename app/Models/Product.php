@@ -16,7 +16,7 @@ class Product extends Model
      *
      * @var list<string>
      */
-    protected $fillable = ['name', 'description', 'price', 'quantity'];
+    protected $fillable = ['name', 'description', 'price', 'stock'];
 
     protected static function booted() {
         static::saving(function ($product) {

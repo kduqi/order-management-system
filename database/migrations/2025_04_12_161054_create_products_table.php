@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('description');
             $table->string('slug')->unique();
             $table->decimal('price');
-            $table->integer('quantity');
+            $table->integer('stock');
             $table->timestamps();
         });
     }

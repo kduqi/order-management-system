@@ -19,8 +19,8 @@ class ProductController extends Controller
         $itemsPerPage = (int) $request->itemsPerPage ?? 25;
 
         return QueryBuilder::for(Product::class)
-            ->allowedFilters(['name', 'description', 'slug', 'price', 'quantity'])
-            ->allowedSorts(['name', 'slug', 'price', 'quantity'])
+            ->allowedFilters(['name', 'description', 'slug', 'price', 'stock'])
+            ->allowedSorts(['name', 'slug', 'price', 'stock'])
             ->paginate($itemsPerPage)
             ->withQueryString();
     }
