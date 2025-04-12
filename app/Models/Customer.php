@@ -48,4 +48,12 @@ class Customer extends Model
             fn () => "{$this->first_name} {$this->last_name}"
         );
     }
+
+    /**
+     * Get the customer's orders.
+     */
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
 }

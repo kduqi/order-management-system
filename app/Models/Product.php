@@ -26,4 +26,13 @@ class Product extends Model
             $product->slug = $count ? "{$slug}-{$count}" : $slug;
         });
     }
+
+    /**
+     * Get the product's orders.
+     */
+    public function orders()
+    {
+        return $this->belongsToMany(Order::class)
+            ->withPivot('quantity');
+    }
 }
